@@ -1,0 +1,43 @@
+### Create a task
+POST http://localhost:8080/api/tasks
+Content-Type: application/json
+
+{
+  "title": "Prepare for backend interview",
+  "description": "Practice Spring Boot CRUD and explain trade-offs",
+  "assigneeId": 1
+}
+
+### List tasks
+GET http://localhost:8080/api/tasks
+
+### Filter tasks
+GET http://localhost:8080/api/tasks?status=TODO
+
+### Get a task (replace UUID)
+GET http://localhost:8080/api/tasks/REPLACE_WITH_UUID
+
+### Update a task (replace UUID)
+PUT http://localhost:8080/api/tasks/REPLACE_WITH_UUID
+Content-Type: application/json
+
+{
+  "title": "Prepare for backend interview",
+  "description": "CRUD, validation, error handling, and outbound HTTP",
+  "status": "IN_PROGRESS",
+  "assigneeId": 1
+}
+
+### Delete a task (replace UUID)
+DELETE http://localhost:8080/api/tasks/REPLACE_WITH_UUID
+
+### Call external test user API (requires internet)
+GET http://localhost:8080/api/users/1
+
+### Validation error
+POST http://localhost:8080/api/tasks
+Content-Type: application/json
+
+{
+  "title": "   "
+}
